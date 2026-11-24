@@ -1,0 +1,11 @@
+{
+  "name": "raja-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "npm run dev -w @raja/web",
+    "build": "npm run build -w @raja/web",
+    "preview": "npm run preview -w @raja/web"
+  }
+}

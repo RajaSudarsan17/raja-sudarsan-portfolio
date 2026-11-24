@@ -1,0 +1,12 @@
+{
+  "name": "@raja/world-3d",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.tsx" },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "three": "*",
+    "@react-three/fiber": "^9.0.0"
+  }
+}
