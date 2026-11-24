@@ -3,19 +3,19 @@
 export const profile = {
   name: "Raja Sudarsan",
   title: "Associate MERN Stack Developer",
-  tagline: "Full-stack and MERN engineer with 1 year of experience. I ship features about 3x faster while owning architecture, security, performance and UX.",
+  tagline: "Associate MERN developer with 1 year of experience building client platform features, 3D product websites and internal business apps.",
   location: "Chennai, Tamil Nadu, India",
   email: "rajasudarsan17@gmail.com",
   linkedin: "https://www.linkedin.com/in/raja-sudarsan-75873a257",
   resume: "/Raja_Sudarsan_Resume.pdf",
   summary:
-    "Associate MERN Stack Developer at KIAQ with 1 year of professional experience across full-stack and MERN engineering, and 2 client projects delivered. I ship MongoDB, Express, React and Node.js features about 3x faster while owning architecture, security, performance and user experience. I also build 3D product websites with Next.js and Three.js, and internal business apps for the manufacturing sector. A B.Tech in Information Technology (2026), strong data skills (SQL, Python, Power BI, Tableau) and an IEEE paper on explainable retail AI round it out.",
+    "Associate MERN Stack Developer at KIAQ with 1 year of professional experience on client projects. I architected and built an admin approval workflow and four documented public APIs for a business-directory platform with React, TypeScript, Node.js, Express and MongoDB, and verified them with a 63-request test collection. I also built 3D product websites with Next.js and Three.js, and an internal finance app for the manufacturing sector. A B.Tech in Information Technology (2026), data skills (SQL, Python, Power BI, Tableau) and an IEEE paper on explainable retail AI round it out.",
 };
 
 export const stats = [
   { value: "1 yr", label: "Professional MERN experience" },
-  { value: "3x", label: "Faster MERN feature delivery" },
-  { value: "2", label: "Client projects delivered" },
+  { value: "2", label: "Client projects" },
+  { value: "4", label: "Public API endpoints shipped, Swagger-documented" },
   { value: "IEEE", label: "Xplore paper, ICONSTEM 2025" },
 ];
 
@@ -26,12 +26,11 @@ export const experiences = [
     period: "Current role / 1 year",
     place: "Full-time",
     points: [
-      "Ship MERN features about 3x faster while owning architecture, security, performance and user experience.",
-      "Work across both full-stack and MERN stack engineering: React front ends, Node.js and Express APIs, MongoDB data models.",
-      "Own architecture: API design, data modelling and front-end structure.",
-      "Own security: authentication, role-based access, input validation and safe data handling.",
-      "Own performance and UX: fast loads, responsive and accessible interfaces.",
-      "Delivered 2 client projects end to end.",
+      "Architected and built the admin listing-approval workflow for a local business directory platform: pending queue, approve and reject with a reason, and status rules, across React and Node.js, Express and MongoDB.",
+      "Delivered 4 public REST endpoints (categories, services, business list, business detail) with validated filters for category, rating, price, verified, sort and pagination, documented in Swagger and returning only approved listings.",
+      "Designed the route, controller, service, repository and validation layers for these APIs and the matching React and Redux Toolkit Query data flow.",
+      "Verified the API with a 63-request Postman collection (63 of 63 passing, responses in about 10 to 150 ms) and traced a bug that exposed pending listings on the public Explore page.",
+      "Worked in a team of 3+ on feature branches and pull requests into a shared dev branch, resolving merge conflicts; ran services with Docker Compose behind an API gateway.",
     ],
   },
   {
@@ -169,10 +168,10 @@ export const projects = [
 ];
 
 export const skills: Record<string, string[]> = {
-  "MERN Stack": ["MongoDB", "Express.js", "React", "Node.js", "REST APIs", "JavaScript", "HTML5", "CSS3"],
-  "Architecture & Engineering": ["API design", "Data modelling", "Modular front ends", "Monorepos", "Integration testing", "Git workflow"],
+  "MERN Stack": ["MongoDB", "Express.js", "React", "Node.js", "REST APIs", "Swagger / OpenAPI", "JavaScript", "TypeScript", "HTML5", "CSS3"],
+  "Architecture & Engineering": ["API design", "Layered architecture", "Request validation", "Data modelling", "Monorepos", "Git workflow", "Pull requests"],
   Security: ["Authentication", "Role-based access", "Input validation (Zod)", "Rate limiting", "CSRF protection", "Audit logging", "Secure cookies"],
-  "Performance & UX": ["Code splitting", "Lazy loading", "Caching", "Core Web Vitals", "Responsive design", "Accessibility"],
+  "Frontend & Testing": ["React", "TypeScript", "Vite", "Redux Toolkit Query", "Responsive design", "Code splitting", "Lazy loading", "Postman", "Integration testing"],
   "Web, 3D & Cloud": ["Next.js", "TypeScript", "Tailwind CSS", "Three.js", "GSAP", "Motion", "Docker", "Vercel", "Render", "PostgreSQL"],
   "Data Analytics & BI": ["SQL", "Python", "Power BI", "Tableau", "Excel (Pivot, VLOOKUP)", "Data Modeling", "ETL"],
   "ML & Libraries": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "TensorFlow", "XGBoost"],

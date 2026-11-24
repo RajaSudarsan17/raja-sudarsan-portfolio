@@ -7,7 +7,7 @@ export function Experience() {
     <PageShell
       word="Experience"
       label="Experience"
-      heading="One year of MERN delivery, with full ownership."
+      heading="One year of full-stack delivery on client platforms."
       lead="Client delivery as an Associate MERN Stack Developer, 3D product websites and internal business apps, and analytics work before that."
     >
       <Depth>
