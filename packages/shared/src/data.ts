@@ -3,19 +3,19 @@
 export const profile = {
   name: "Raja Sudarsan",
   title: "Associate MERN Stack Developer",
-  tagline: "Associate MERN developer at KIAQ with 1 year of experience, shipping client projects, 3D websites and business apps.",
+  tagline: "Full-stack and MERN engineer with 1 year of experience. I ship features about 3x faster while owning architecture, security, performance and UX.",
   location: "Chennai, Tamil Nadu, India",
   email: "rajasudarsan17@gmail.com",
   linkedin: "https://www.linkedin.com/in/raja-sudarsan-75873a257",
   resume: "/Raja_Sudarsan_Resume.pdf",
   summary:
-    "Associate MERN Stack Developer at KIAQ with 1 year of professional experience and 2 client projects delivered, plus an Information Technology degree (B.Tech 2026). I build full-stack products with MongoDB, Express, React and Node.js, and use Next.js and Three.js for rich 3D front ends. I built the websites for Maxmoc Motor Works and Green Boy India and the Maxmoc invoicing and finance management app. On top of that I bring real data skills: SQL, Python, Power BI and Tableau, and an IEEE paper on explainable retail AI.",
+    "Associate MERN Stack Developer at KIAQ with 1 year of professional experience across full-stack and MERN engineering, and 2 client projects delivered. I ship MongoDB, Express, React and Node.js features about 3x faster while owning architecture, security, performance and user experience. I also build 3D product websites with Next.js and Three.js, and internal business apps for the manufacturing sector. A B.Tech in Information Technology (2026), strong data skills (SQL, Python, Power BI, Tableau) and an IEEE paper on explainable retail AI round it out.",
 };
 
 export const stats = [
   { value: "1 yr", label: "Professional MERN experience" },
-  { value: "2", label: "Client projects delivered at KIAQ" },
-  { value: "3", label: "Own products shipped: 2 websites, 1 app" },
+  { value: "3x", label: "Faster MERN feature delivery" },
+  { value: "2", label: "Client projects delivered" },
   { value: "IEEE", label: "Xplore paper, ICONSTEM 2025" },
 ];
 
@@ -26,21 +26,25 @@ export const experiences = [
     period: "Current role / 1 year",
     place: "Full-time",
     points: [
-      "Working as an Associate MERN Stack Developer with 1 year of professional experience.",
-      "Worked on 2 client projects with the MongoDB, Express, React and Node.js stack.",
-      "Deliver to client requirements and reviews as part of a development team.",
+      "Ship MERN features about 3x faster while owning architecture, security, performance and user experience.",
+      "Work across both full-stack and MERN stack engineering: React front ends, Node.js and Express APIs, MongoDB data models.",
+      "Own architecture: API design, data modelling and front-end structure.",
+      "Own security: authentication, role-based access, input validation and safe data handling.",
+      "Own performance and UX: fast loads, responsive and accessible interfaces.",
+      "Delivered 2 client projects end to end.",
     ],
   },
   {
-    role: "Full-Stack Developer (MERN)",
-    company: "Maxmoc Motor Works / Green Boy India",
-    period: "Websites, apps and management systems",
+    role: "Full-Stack Developer",
+    company: "Industrial manufacturing sector",
+    period: "Product websites and internal business apps",
     place: "Chennai",
     points: [
-      "Built and shipped the Maxmoc Motor Works website: product catalogue, 3D Explorer, Fitment Studio and light/dark theme, deployed on Vercel.",
-      "Built the Green Boy India website: live 3D product hero, 3D teardown, fitment studio, 3D factory world and an RFQ contact form wired to a database and email.",
-      "Built the MMW Invoice management app: quotations, GST tax invoices, finance ledger, reports and role-based access for the team.",
-      "Own the full path: React and Next.js front ends, serverless and Node APIs, PostgreSQL, deployment and ongoing fixes.",
+      "Built public product websites with 3D product explorers, exploded part views and fitment tools in Next.js and Three.js.",
+      "Built a request-for-quote flow with schema validation, database storage and email notification.",
+      "Built an internal quotation, GST invoicing and finance ledger app with role-based access, audit logging and CSV and PDF reports.",
+      "Hardened it with session-cookie auth, hashed passwords, rate limits, CSRF checks, parameterised SQL and integration tests.",
+      "Own the path from React and Next.js front end to Node APIs, PostgreSQL and Vercel deployment.",
     ],
   },
   {
@@ -59,35 +63,35 @@ export const experiences = [
 
 export const projects = [
   {
-    name: "Maxmoc Motor Works Website",
-    kicker: "Live website / maxmoc.com",
+    name: "3D Industrial Product Website",
+    kicker: "Website / manufacturing",
     year: "2026",
     summary:
-      "Public website for Maxmoc Motor Works, a maker of emission aftertreatment systems. Built as a product experience, not a brochure.",
+      "Public website for an emission-control products manufacturer, built as a product experience rather than a brochure.",
     points: [
-      "Product catalogue for SCR, HC-SCR, DOC + DPF, RECD, ATCU and marine SCR systems.",
+      "Product catalogue with a page for every system.",
       "3D Explorer: every product viewable in 3D, part by part.",
       "Fitment Studio: check how a system fits a vehicle or engine.",
       "Light and dark theme, scroll-driven animation and SEO metadata.",
-      "Branch, commit and fast-forward merge workflow; auto-deploy to Vercel from main.",
+      "Branch, commit and fast-forward merge workflow with auto-deploy from main.",
     ],
     stack: ["Next.js 15", "React 19", "TypeScript", "Tailwind", "Three.js", "Motion", "Vercel"],
-    href: "https://maxmoc.com",
-    cta: "Visit maxmoc.com",
+    href: "",
+    cta: "",
   },
   {
-    name: "Green Boy India Website",
-    kicker: "Website / Green Boy India",
+    name: "3D Power Systems Website",
+    kicker: "Website / power equipment",
     year: "2026",
     summary:
-      "Website for Green Boy India: diesel engines, generator sets and hybrid power systems, with 3D at the core of the experience.",
+      "Website for a diesel engine and generator set business, with 3D at the core of the experience.",
     points: [
       "Live 3D product hero and a catalogue with a product page for each item.",
       "3D Explorer with exploded, part-by-part views.",
-      "Teardown page: working sequence with live readings.",
-      "Genset fitment studio and a CPCB IV+ guide.",
+      "Teardown page showing the working sequence with live readings.",
+      "Generator set fitment studio and a compliance guide.",
       "Factory World: the production line rebuilt in 3D.",
-      "RFQ contact form validated with Zod, stored in Postgres and emailed through Resend.",
+      "Quote request form validated with Zod, stored in Postgres and emailed through Resend.",
       "Smooth scrolling with Lenis, GSAP and Motion; owner-gated release before going public.",
     ],
     stack: ["Next.js 15", "React 19", "TypeScript", "Three.js", "GSAP", "Lenis", "Postgres", "Zod", "Vercel"],
@@ -95,13 +99,13 @@ export const projects = [
     cta: "",
   },
   {
-    name: "MMW Invoice Management App",
-    kicker: "Private business app / app.maxmoc.com",
+    name: "Quotation, Invoicing & Finance App",
+    kicker: "Private business app / internal",
     year: "2026",
     summary:
-      "Internal management system for Maxmoc Motor Works: quotations, GST invoices, a full finance ledger and reports in one place.",
+      "Internal management system covering quotations, GST invoices, a full finance ledger and reports in one place.",
     points: [
-      "Quotation and tax invoice PDFs filled onto the company templates; bulk invoice import and payment tracking.",
+      "Quotation and tax invoice PDFs filled onto company templates; bulk invoice import and payment tracking.",
       "Finance ledger: payments made and received, transfers, budgets, recurring payments and period lock.",
       "Reports as JSON, CSV and bank-format PDF: statement of account, income and expenditure, GST, cash forecast, audit trail.",
       "Role-based access (owner, admin, finance, purchase, production, viewer) with forced first-login password change.",
@@ -164,11 +168,13 @@ export const projects = [
 
 export const skills: Record<string, string[]> = {
   "MERN Stack": ["MongoDB", "Express.js", "React", "Node.js", "REST APIs", "JavaScript", "HTML5", "CSS3"],
+  "Architecture & Engineering": ["API design", "Data modelling", "Modular front ends", "Monorepos", "Integration testing", "Git workflow"],
+  Security: ["Authentication", "Role-based access", "Input validation (Zod)", "Rate limiting", "CSRF protection", "Audit logging", "Secure cookies"],
+  "Performance & UX": ["Code splitting", "Lazy loading", "Caching", "Core Web Vitals", "Responsive design", "Accessibility"],
   "Web, 3D & Cloud": ["Next.js", "TypeScript", "Tailwind CSS", "Three.js", "GSAP", "Motion", "Vercel", "PostgreSQL"],
   "Data Analytics & BI": ["SQL", "Python", "Power BI", "Tableau", "Excel (Pivot, VLOOKUP)", "Data Modeling", "ETL"],
   "ML & Libraries": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "TensorFlow", "XGBoost"],
   Databases: ["MongoDB", "PostgreSQL", "MySQL", "SQL Server"],
-  Concepts: ["EDA", "Statistics", "Machine Learning", "Time-series Forecasting", "NLP", "Dashboards"],
   Tools: ["Git", "GitHub", "Jupyter", "VS Code", "Java (beginner)"],
 };
 

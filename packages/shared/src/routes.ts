@@ -21,12 +21,12 @@ export const routes: {
   {
     key: "experience", path: "/experience", title: "Experience", pin: "Office", sub: "KIAQ + more", kind: "office",
     summary: "Associate MERN Stack Developer with 1 year of experience and 2 client projects.",
-    highlights: ["Associate MERN Developer, KIAQ (current)", "Full-stack builder for Maxmoc and Green Boy India", "Data Analyst Intern, Maxmoc (2024)"],
+    highlights: ["Associate MERN Developer, KIAQ (current, 1 year)", "Ships MERN features about 3x faster", "Owns architecture, security, performance and UX"],
   },
   {
     key: "work", path: "/work", title: "Selected Work", pin: "Workshop", sub: "Products & apps", kind: "factory",
-    summary: "Two 3D websites and a management app, shipped for Maxmoc Motor Works and Green Boy India.",
-    highlights: ["Maxmoc website: 3D Explorer and Fitment Studio", "Green Boy site: 3D factory world, RFQ form", "MMW Invoice app: quotes, GST invoices, ledger"],
+    summary: "Two 3D product websites and an internal finance app for the manufacturing sector, built end to end.",
+    highlights: ["Product website: 3D Explorer and Fitment Studio", "Power systems site: 3D factory world, quote form", "Finance app: quotes, GST invoices, ledger"],
   },
   {
     key: "skills", path: "/skills", title: "Skills", pin: "Lab", sub: "MERN + Data", kind: "lab",

@@ -7,8 +7,8 @@ export function Experience() {
     <PageShell
       word="Experience"
       label="Experience"
-      heading="One year at KIAQ, plus products of my own."
-      lead="Client delivery as an Associate MERN Stack Developer, websites and apps for Maxmoc and Green Boy India, and analytics work before that."
+      heading="One year of MERN delivery, with full ownership."
+      lead="Client delivery as an Associate MERN Stack Developer, 3D product websites and internal business apps, and analytics work before that."
     >
       <Depth>
         <Card className="max-w-6xl border-accent/30">

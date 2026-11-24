@@ -10,7 +10,7 @@ export function Work() {
       word="Work"
       label="Products & Apps"
       heading="Websites, 3D experiences and management apps."
-      lead="The Maxmoc and Green Boy products come first, then research and side projects."
+      lead="Product websites and an internal finance app come first, then research and side projects."
     >
       <div className="space-y-8 max-w-6xl">
         {featured.map((p, i) => (

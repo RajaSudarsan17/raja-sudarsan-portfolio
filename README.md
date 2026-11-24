@@ -26,3 +26,6 @@ npm run build
 - 3D model "Fox's islands" by nimzu (https://sketchfab.com/nimzuk), CC-BY-4.0, via [sanidhyy/3d_portfolio](https://github.com/sanidhyy/3d_portfolio) (MIT)
 - Swarm cursor idea inspired by [ruvnet/mouse-swarm](https://github.com/ruvnet/mouse-swarm) and [DhvanilPatel/swarm-cursors](https://github.com/DhvanilPatel/swarm-cursors)
 - Draco decoder from three.js (MIT)
+
+## Resume
+Source: `resume/resume.html`. Print it to PDF (A4, no headers/footers) and save as `apps/web/public/Raja_Sudarsan_Resume.pdf`.
