@@ -9,7 +9,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/raja-sudarsan-75873a257",
   resume: "/Raja_Sudarsan_Resume.pdf",
   summary:
-    "Associate MERN Stack Developer at KIAQ with 1 year of professional experience on client projects. I architected and built an admin approval workflow and four documented public APIs for a business-directory platform with React, TypeScript, Node.js, Express and MongoDB, and verified them with a 63-request test collection. I also built 3D product websites with Next.js and Three.js, and an internal finance app for the manufacturing sector. A B.Tech in Information Technology (2026), data skills (SQL, Python, Power BI, Tableau) and an IEEE paper on explainable retail AI round it out.",
+    "Associate MERN Stack Developer at KIAQ with 1 year of professional experience on client projects. On a role-based business-directory platform I built the merchant, review, enquiry and favorites pages, the admin approval workflow and four documented public APIs with React, TypeScript, Node.js, Express and MongoDB, and verified the API with a 63-request test collection. I also built 3D product websites with Next.js and Three.js, and an internal finance app for the manufacturing sector. A B.Tech in Information Technology (2026), data skills (SQL, Python, Power BI, Tableau) and an IEEE paper on explainable retail AI round it out.",
 };
 
 export const stats = [
@@ -26,11 +26,11 @@ export const experiences = [
     period: "Current role / 1 year",
     place: "Full-time",
     points: [
-      "Architected and built the admin listing-approval workflow for a local business directory platform: pending queue, approve and reject with a reason, and status rules, across React and Node.js, Express and MongoDB.",
-      "Delivered 4 public REST endpoints (categories, services, business list, business detail) with validated filters for category, rating, price, verified, sort and pagination, documented in Swagger and returning only approved listings.",
-      "Designed the route, controller, service, repository and validation layers for these APIs and the matching React and Redux Toolkit Query data flow.",
-      "Verified the API with a 63-request Postman collection (63 of 63 passing, responses in about 10 to 150 ms) and traced a bug that exposed pending listings on the public Explore page.",
-      "Worked in a team of 3+ on feature branches and pull requests into a shared dev branch, resolving merge conflicts; ran services with Docker Compose behind an API gateway.",
+      "Built the Favorites, My Reviews (customer and business-owner views), My Enquiries, business dashboard (Overview, Leads), Add Business and My Businesses pages and the footer for a role-based local business directory platform, matched exactly to a reference design with shared design tokens and reusable components.",
+      "Built the admin listing-approval workflow (pending queue, approve and reject with a reason, status rules returning clear 404, 409 and 422 responses) and 4 public REST endpoints (categories, services, business list, business detail) with validated filters, documented in Swagger and returning only approved listings.",
+      "Architected a page-per-folder front end (types, API layer, components) on React, TypeScript, Vite and RTK Query, with an API layer on sample data so each page swaps to real endpoints with a small change; designed route, controller, service, repository and validation layers for the new APIs.",
+      "Verified the API with a 63-request Postman collection (63 of 63 passing), Swagger checks and a unit test report; found a bug that exposed pending listings on the public Explore page and contained it with a front-end filter.",
+      "Worked in a team of 5 on GitHub pull requests into a shared dev branch, resolving merge conflicts; ran the gateway, auth, directory, MongoDB, Redis and Kafka stack with Docker Compose; wrote Jira subtasks and test documentation.",
     ],
   },
   {
@@ -171,12 +171,12 @@ export const skills: Record<string, string[]> = {
   "MERN Stack": ["MongoDB", "Express.js", "React", "Node.js", "REST APIs", "Swagger / OpenAPI", "JavaScript", "TypeScript", "HTML5", "CSS3"],
   "Architecture & Engineering": ["API design", "Layered architecture", "Request validation", "Data modelling", "Monorepos", "Git workflow", "Pull requests"],
   Security: ["Authentication", "Role-based access", "Input validation (Zod)", "Rate limiting", "CSRF protection", "Audit logging", "Secure cookies"],
-  "Frontend & Testing": ["React", "TypeScript", "Vite", "Redux Toolkit Query", "Responsive design", "Code splitting", "Lazy loading", "Postman", "Integration testing"],
+  "Frontend & Testing": ["React", "TypeScript", "Vite", "Redux Toolkit Query", "React Router", "Tailwind CSS", "Design tokens", "Responsive design", "Postman", "Swagger", "Unit test reporting"],
   "Web, 3D & Cloud": ["Next.js", "TypeScript", "Tailwind CSS", "Three.js", "GSAP", "Motion", "Docker", "Vercel", "Render", "PostgreSQL"],
   "Data Analytics & BI": ["SQL", "Python", "Power BI", "Tableau", "Excel (Pivot, VLOOKUP)", "Data Modeling", "ETL"],
   "ML & Libraries": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "TensorFlow", "XGBoost"],
   Databases: ["MongoDB", "PostgreSQL", "MySQL", "SQL Server"],
-  Tools: ["Git", "GitHub", "Jupyter", "VS Code", "Java (beginner)"],
+  Tools: ["Git", "GitHub", "Jira", "Docker Compose", "Jupyter", "VS Code", "Java (beginner)"],
 };
 
 export const certifications = [

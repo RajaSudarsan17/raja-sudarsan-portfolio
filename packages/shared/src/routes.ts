@@ -21,7 +21,7 @@ export const routes: {
   {
     key: "experience", path: "/experience", title: "Experience", pin: "Office", sub: "KIAQ + more", kind: "office",
     summary: "Associate MERN Stack Developer with 1 year of experience on client projects.",
-    highlights: ["Associate MERN Developer, KIAQ (current, 1 year)", "Architected an admin approval workflow and 4 public APIs", "63 of 63 API tests passing, Swagger-documented"],
+    highlights: ["Associate MERN Developer, KIAQ (current, 1 year)", "Built merchant, review and enquiry pages, an admin approval workflow and 4 public APIs", "63 of 63 API tests passing, Swagger-documented"],
   },
   {
     key: "work", path: "/work", title: "Selected Work", pin: "Workshop", sub: "Products & apps", kind: "factory",
