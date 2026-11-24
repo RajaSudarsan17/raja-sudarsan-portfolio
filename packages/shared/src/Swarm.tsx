@@ -122,7 +122,7 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
               s.tx = tl.x; s.ty = tl.y;
               if (Math.hypot(tl.x - s.x, tl.y - s.y) < 22 || now - job.started > 1800) {
                 job.phase = "drag"; job.t0 = now;
-                job.dur = Math.min(800, Math.max(350, 300 + (r.width + r.height) * 0.4));
+                job.dur = Math.min(1500, Math.max(750, 600 + (r.width + r.height) * 0.7));
               }
             } else {
               const p = Math.min(1, (now - job.t0) / job.dur);
@@ -143,7 +143,7 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
         }
 
         if (!s.job || s.job.phase === "fly") {
-          const k = s.job ? 0.11 : 0.045;
+          const k = s.job ? 0.07 : 0.045;
           s.vx = (s.vx + (s.tx - s.x) * k * dt) * Math.pow(0.8, dt);
           s.vy = (s.vy + (s.ty - s.y) * k * dt) * Math.pow(0.8, dt);
           s.x += s.vx * dt; s.y += s.vy * dt;
@@ -179,7 +179,7 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
         </div>
       ))}
       {agents.map((a) => (
-        <div key={a.label + "-box"} style={{ position: "fixed", left: 0, top: 0, width: 0, height: 0, opacity: 0, transition: "opacity .35s", border: `1.5px dashed ${a.color}`, background: a.color + "14", borderRadius: 6 }} />
+        <div key={a.label + "-box"} style={{ position: "fixed", left: 0, top: 0, width: 0, height: 0, opacity: 0, transition: "opacity .7s", border: `1.5px dashed ${a.color}`, background: a.color + "14", borderRadius: 6 }} />
       ))}
     </div>
   );

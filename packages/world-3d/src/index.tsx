@@ -57,6 +57,10 @@ function World({ ctl, pins, labels, onSelect, selected, view }: {
 
   const { scene, scale, offset, ground } = useMemo(() => {
     const s = gltf.scene.clone(true);
+    s.traverse((o) => {
+      o.raycast = () => {};
+      if (o !== s) { o.updateMatrix(); o.matrixAutoUpdate = false; }
+    });
     const box = new THREE.Box3().setFromObject(s);
     const sz = box.getSize(new THREE.Vector3());
     const sc = 7 / Math.max(sz.x, sz.z);
@@ -117,7 +121,9 @@ function World({ ctl, pins, labels, onSelect, selected, view }: {
     });
 
     const dist = THREE.MathUtils.clamp(6.2 / (0.344 * (size.width / size.height)), 10.5, 19);
-    const cy = 4.4 + (dist * 0.5 - 4.4) * t, cz = 10.5 + (dist * 0.9 - 10.5) * t;
+    let cy = 4.4 + (dist * 0.5 - 4.4) * t, cz = 10.5 + (dist * 0.9 - 10.5) * t;
+    const fit = Math.max(1, (7.8 + 5.2 * t) / (0.688 * (size.width / size.height)) / Math.hypot(cy, cz));
+    cy *= fit; cz *= fit;
     camera.position.y += (cy - camera.position.y) * Math.min(delta * 3, 1);
     camera.position.z += (cz - camera.position.z) * Math.min(delta * 3, 1);
     camera.lookAt(0, 0.6, 0);
@@ -130,7 +136,7 @@ function World({ ctl, pins, labels, onSelect, selected, view }: {
       const depth = facing * (1 - t) + t;
       v.project(camera);
       const x = (v.x * 0.5 + 0.5) * size.width, y = (-v.y * 0.5 + 0.5) * size.height;
-      el.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-100%) scale(${0.8 + depth * 0.25})`;
+      el.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-100%) scale(${(0.8 + depth * 0.25) * (size.width < 640 ? 0.8 : 1)})`;
       const op = (0.35 + depth * 0.65) * (1 - bg);
       el.style.opacity = String(op);
       el.style.pointerEvents = op < 0.25 ? "none" : "auto";
@@ -184,7 +190,7 @@ export default function WorldScene({ pins, onSelect, selected = null, active = t
       onPointerUp={() => { ctl.current.dragging = false; }}
       onPointerLeave={() => { ctl.current.dragging = false; }}
     >
-      <Canvas frameloop="demand" dpr={[1, 1.5]} camera={{ position: [0, 4.4, 10.5], fov: 38 }} gl={{ alpha: true, antialias: true }}>
+      <Canvas frameloop="demand" dpr={[1, matchMedia("(pointer: coarse)").matches ? 1.25 : 1.5]} camera={{ position: [0, 4.4, 10.5], fov: 38 }} gl={{ alpha: true, antialias: true }}>
         <ambientLight intensity={0.75} />
         <directionalLight position={[5, 8, 4]} intensity={2.4} />
         <hemisphereLight args={["#b1e1ff", "#1a1a1a", 1]} />

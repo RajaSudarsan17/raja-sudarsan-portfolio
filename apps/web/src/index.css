@@ -16,7 +16,7 @@ body { background: #0a0a0a; color: #f4f4f2; font-family: var(--font-sans); overf
 
 /* Swarm rebuild: content stays hidden until a cursor has drawn a box around it. */
 html.swarm-on [data-swarm]:not(.swarm-in):not([data-swarm-static]) { opacity: 0; clip-path: inset(0 100% 0 0); }
-html.swarm-on [data-swarm].swarm-in { animation: swarm-draw 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+html.swarm-on [data-swarm].swarm-in { animation: swarm-draw 1.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
 @keyframes swarm-draw {
   from { opacity: 0; clip-path: inset(0 100% 0 0); transform: translateY(10px); }
   to { opacity: 1; clip-path: inset(-60px -60px -60px -60px); transform: none; }

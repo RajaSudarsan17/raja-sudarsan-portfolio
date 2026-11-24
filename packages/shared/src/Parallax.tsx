@@ -5,9 +5,10 @@ import { useEffect, useRef, type ReactNode } from "react";
 export function Depth({ children, className = "" }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.75, 1], [0.88, 1, 1, 1.05]);
-  const rotateX = useTransform(scrollYProgress, [0, 0.3, 0.75, 1], [9, 0, 0, -4]);
-  const y = useTransform(scrollYProgress, [0, 0.3], [70, 0]);
+  const small = typeof matchMedia !== "undefined" && matchMedia("(max-width: 767px)").matches;
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.75, 1], small ? [0.95, 1, 1, 1] : [0.88, 1, 1, 1.05]);
+  const rotateX = useTransform(scrollYProgress, [0, 0.3, 0.75, 1], small ? [4, 0, 0, 0] : [9, 0, 0, -4]);
+  const y = useTransform(scrollYProgress, [0, 0.3], small ? [30, 0] : [70, 0]);
   return (
     <div ref={ref} className={className} style={{ perspective: 1400 }}>
       <motion.div style={{ scale, rotateX, y, transformOrigin: "50% 40%" }}>{children}</motion.div>

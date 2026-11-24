@@ -166,7 +166,7 @@ export function Home() {
               <p className="label text-gray-500 mb-3">[ <span>05</span> ] <span className="font-bold text-white">The world</span></p>
               <p className="text-xs text-gray-400 leading-relaxed">Drag to rotate. Click a building for a summary, then open its page. Keep scrolling and the island flattens into a map.</p>
             </div>
-            <p className="pointer-events-none absolute right-6 md:right-16 bottom-5 label text-[9px] text-gray-600">3D model: Fox's islands by nimzu, CC-BY-4.0</p>
+            <p className="pointer-events-none absolute right-6 md:right-16 bottom-3 md:bottom-5 label text-[8px] md:text-[9px] text-gray-600 text-right max-w-[11rem] md:max-w-none">3D model: Fox's islands by nimzu, CC-BY-4.0</p>
           </div>
         </section>
       </div>

@@ -9,9 +9,13 @@ const DARK = "#2b2f27";
 const ACC = "#c8ff3d";
 const WIN = "#ffe6a3";
 
-const std = (color: string, extra: Partial<THREE.MeshStandardMaterialParameters> = {}) => (
-  <meshStandardMaterial color={color} roughness={0.6} metalness={0.1} {...extra} />
-);
+const matCache = new Map<string, THREE.MeshStandardMaterial>();
+const std = (color: string, extra: Partial<THREE.MeshStandardMaterialParameters> = {}) => {
+  const key = color + JSON.stringify(extra);
+  let m = matCache.get(key);
+  if (!m) { m = new THREE.MeshStandardMaterial({ color, roughness: 0.6, metalness: 0.1, ...extra }); matCache.set(key, m); }
+  return <primitive object={m} attach="material" dispose={null} />;
+};
 
 function School() {
   const flag = useRef<THREE.Mesh>(null!);
