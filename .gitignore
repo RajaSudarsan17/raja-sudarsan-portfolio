@@ -5,3 +5,7 @@ dist
 .vercel
 .env*
 .claude
+
+# tailored resume variants are for applications only, not published
+resume/pdf/
+resume/resume-*.html
