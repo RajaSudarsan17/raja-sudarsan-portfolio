@@ -45,11 +45,9 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
     const st: State[] = agents.map((_, i) => ({ x: -80 - i * 24, y: -80, vx: 0, vy: 0, tx: 0, ty: 0, hold: 0, target: null, job: null }));
     const claimed = new Set<HTMLElement>();
     let pending: HTMLElement[] = [];
-    let mx = innerWidth / 2, my = innerHeight / 2, lastMove = -1e9;
     let raf = 0, prev = performance.now();
     const timers: number[] = [];
 
-    const onMove = (e: PointerEvent) => { mx = e.clientX; my = e.clientY; lastMove = performance.now(); };
     const onDown = () => {
       for (let i = 0; i < n; i++) {
         if (st[i].job) continue;
@@ -57,7 +55,6 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
         st[i].vx += Math.cos(a) * 22; st[i].vy += Math.sin(a) * 22;
       }
     };
-    addEventListener("pointermove", onMove, { passive: true });
     addEventListener("pointerdown", onDown, { passive: true });
 
     const refreshPending = () => {
@@ -104,7 +101,6 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
 
     const tick = (now: number) => {
       const dt = Math.min((now - prev) / 16.67, 3); prev = now;
-      const active = now - lastMove < 2200;
       for (let i = 0; i < n; i++) {
         const s = st[i];
 
@@ -138,10 +134,6 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
               if (p >= 1) reveal(i, job);
             }
           }
-        } else if (active) {
-          const a = (i / n) * Math.PI * 2 + now * 0.0006;
-          const r = 52 + (i % 2) * 26;
-          s.tx = mx + Math.cos(a) * r; s.ty = my + Math.sin(a) * r; s.target = null;
         } else {
           const d = Math.hypot(s.tx - s.x, s.ty - s.y);
           if (!s.target || d < 14) {
@@ -151,7 +143,7 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
         }
 
         if (!s.job || s.job.phase === "fly") {
-          const k = s.job ? 0.11 : active ? 0.07 : 0.045;
+          const k = s.job ? 0.11 : 0.045;
           s.vx = (s.vx + (s.tx - s.x) * k * dt) * Math.pow(0.8, dt);
           s.vy = (s.vy + (s.ty - s.y) * k * dt) * Math.pow(0.8, dt);
           s.x += s.vx * dt; s.y += s.vy * dt;
@@ -168,7 +160,6 @@ export default function Swarm({ agents = AGENTS }: { agents?: Agent[] }) {
       cancelAnimationFrame(raf);
       clearInterval(pendingTimer);
       timers.forEach(clearTimeout);
-      removeEventListener("pointermove", onMove);
       removeEventListener("pointerdown", onDown);
       document.removeEventListener("visibilitychange", vis);
       document.querySelectorAll(".swarm-in").forEach((el) => el.classList.remove("swarm-in"));

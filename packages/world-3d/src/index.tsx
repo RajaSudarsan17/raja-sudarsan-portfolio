@@ -25,6 +25,22 @@ function setup(loader: GLTFLoader) {
   loader.setDRACOLoader(d);
 }
 
+function Driver({ view, active }: { view: View; active: boolean }) {
+  const invalidate = useThree((s) => s.invalidate);
+  useEffect(() => {
+    if (!active) return;
+    let raf = 0, last = 0;
+    const loop = (now: number) => {
+      raf = requestAnimationFrame(loop);
+      if (document.hidden) return;
+      if (now - last >= (view.bg > 0.5 ? 33 : 0)) { last = now; invalidate(); }
+    };
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
+  }, [view, active, invalidate]);
+  return null;
+}
+
 function World({ ctl, pins, labels, onSelect, selected, view }: {
   ctl: React.RefObject<Ctl>; pins: Pin[]; labels: React.RefObject<(HTMLElement | null)[]>;
   onSelect: (id: string) => void; selected: string | null; view: View;
@@ -168,10 +184,11 @@ export default function WorldScene({ pins, onSelect, selected = null, active = t
       onPointerUp={() => { ctl.current.dragging = false; }}
       onPointerLeave={() => { ctl.current.dragging = false; }}
     >
-      <Canvas frameloop={active ? "always" : "never"} dpr={[1, 1.5]} camera={{ position: [0, 4.4, 10.5], fov: 38 }} gl={{ alpha: true, antialias: true }}>
+      <Canvas frameloop="demand" dpr={[1, 1.5]} camera={{ position: [0, 4.4, 10.5], fov: 38 }} gl={{ alpha: true, antialias: true }}>
         <ambientLight intensity={0.75} />
         <directionalLight position={[5, 8, 4]} intensity={2.4} />
         <hemisphereLight args={["#b1e1ff", "#1a1a1a", 1]} />
+        <Driver view={view} active={active} />
         <World ctl={ctl} pins={pins} labels={labels} onSelect={onSelect} selected={selected} view={view} />
       </Canvas>
 

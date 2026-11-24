@@ -17,12 +17,14 @@ export function Scramble({ text, className = "", delay = 0, duration = 1100 }: {
     const el = ref.current;
     if (!el) return;
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) { setOut(text); return; }
-    let started = false, raf = 0, timer = 0;
+    let started = false, raf = 0, timer = 0, lastSet = 0;
 
     const run = () => {
       const t0 = performance.now() + delay;
       const step = (now: number) => {
         const p = Math.min(1, Math.max(0, (now - t0) / duration));
+        if (p < 1 && now - lastSet < 40) { raf = requestAnimationFrame(step); return; }
+        lastSet = now;
         const cut = p * text.length * 1.15;
         let s = "";
         for (let i = 0; i < text.length; i++) {
